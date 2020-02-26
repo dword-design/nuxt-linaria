@@ -33,6 +33,9 @@
     "tree-kill-promise": "^1.0.0",
     "with-local-tmp-dir": "^2.2.8"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "baseConfig": {
     "depcheckConfig": {
       "ignoreMatches": [
