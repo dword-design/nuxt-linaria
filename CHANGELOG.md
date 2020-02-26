@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/dword-design/nuxt-linaria/compare/v1.0.0...v1.0.1) (2020-02-26)
+
+
+### Bug Fixes
+
+* add publish config ([aeafc2e](https://github.com/dword-design/nuxt-linaria/commit/aeafc2e8d2fafc5d4727048c27fc458a5125c03f))
+
 # 1.0.0 (2020-02-26)
 
 
