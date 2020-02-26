@@ -5,6 +5,7 @@ import puppeteer from '@dword-design/puppeteer'
 import kill from 'tree-kill-promise'
 import { endent } from '@dword-design/functions'
 import execa from 'execa'
+import getPackageName from 'get-package-name'
 
 let browser
 let page
@@ -21,11 +22,11 @@ export default {
         export default {
           build: {
             babel: {
-              configFile: '${require.resolve('@dword-design/babel-config')}',
+              configFile: require.resolve('${getPackageName(require.resolve('@dword-design/babel-config'))}'),
             },
           },
           modules: [
-            '${require.resolve('.')}',
+            require.resolve('../src'),
           ],
         }
       `,
