@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/dword-design/nuxt-linaria/compare/v1.0.1...v1.0.2) (2020-02-28)
+
+
+### Bug Fixes
+
+* do not use linaria preprocessor ([5555726](https://github.com/dword-design/nuxt-linaria/commit/5555726c8e5d72c20d3d4aa1122cae58d75f0d64))
+
 ## [1.0.1](https://github.com/dword-design/nuxt-linaria/compare/v1.0.0...v1.0.1) (2020-02-26)
 
 
