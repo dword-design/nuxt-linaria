@@ -49,4 +49,36 @@ export default {
       await kill(childProcess.pid)
     }
   }),
+  autoprefixer: () => withLocalTmpDir(async () => {
+    await outputFiles({
+      'nuxt.config.js': endent`
+        export default {
+          build: {
+            babel: {
+              configFile: require.resolve('${getPackageName(require.resolve('@dword-design/babel-config'))}'),
+            },
+          },
+          modules: [
+            require.resolve('../src'),
+          ],
+        }
+      `,
+      'pages/index.js': endent`
+        import { css } from 'linaria'
+
+        export default {
+          render: h => <div class={ css\`object-fit: cover\` }>Hello world</div>,
+        }
+      `,
+    })
+    await execa('nuxt', ['build'])
+    const childProcess = execa('nuxt', ['start'])
+    try {
+      await portReady(3000)
+      await page.goto('http://localhost:3000')
+      expect(await page.content()).toMatch('-o-object-fit:cover')
+    } finally {
+      await kill(childProcess.pid)
+    }
+  }),
 }
