@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/dword-design/nuxt-linaria/compare/v1.0.2...v1.0.3) (2020-02-28)
+
+
+### Bug Fixes
+
+* re-add stylis and add test for postcss plugins ([8cec22a](https://github.com/dword-design/nuxt-linaria/commit/8cec22a52761feba02a56abf03962a099d9e7a98))
+
 ## [1.0.2](https://github.com/dword-design/nuxt-linaria/compare/v1.0.1...v1.0.2) (2020-02-28)
 
 
