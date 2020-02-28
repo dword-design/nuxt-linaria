@@ -10,7 +10,6 @@ export default function () {
         options: {
           sourceMap: this.options.dev,
           babelOptions: this.options.build.babel |> omit('cacheDirectory'),
-          preprocessor: 'none',
         },
       })
   })

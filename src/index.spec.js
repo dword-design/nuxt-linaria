@@ -81,4 +81,41 @@ export default {
       await kill(childProcess.pid)
     }
   }),
+  'postcss plugin': () => withLocalTmpDir(async () => {
+    await outputFiles({
+      'nuxt.config.js': endent`
+        export default {
+          build: {
+            babel: {
+              configFile: require.resolve('${getPackageName(require.resolve('@dword-design/babel-config'))}'),
+            },
+            postcss: {
+              plugins: {
+                '${getPackageName(require.resolve('postcss-hexrgba'))}': {},
+              },
+            },
+          },
+          modules: [
+            require.resolve('../src'),
+          ],
+        }
+      `,
+      'pages/index.js': endent`
+        import { css } from 'linaria'
+
+        export default {
+          render: h => <div class={ css\`background: rgba(#fff, .5)\` }>Hello world</div>,
+        }
+      `,
+    })
+    await execa('nuxt', ['build'])
+    const childProcess = execa('nuxt', ['start'])
+    try {
+      await portReady(3000)
+      await page.goto('http://localhost:3000')
+      expect(await page.content()).toMatch('background:hsla(0,0%,100%,.5)')
+    } finally {
+      await kill(childProcess.pid)
+    }
+  }),
 }
