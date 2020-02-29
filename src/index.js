@@ -1,4 +1,5 @@
 import { omit } from '@dword-design/functions'
+import P from 'path'
 
 export default function () {
   this.extendBuild(config => {
@@ -10,6 +11,7 @@ export default function () {
         options: {
           sourceMap: this.options.dev,
           babelOptions: this.options.build.babel |> omit('cacheDirectory'),
+          cacheDirectory: P.join('node_modules', '.cache', 'linaria'),
         },
       })
   })

@@ -6,6 +6,8 @@ import kill from 'tree-kill-promise'
 import { endent } from '@dword-design/functions'
 import execa from 'execa'
 import getPackageName from 'get-package-name'
+import { exists } from 'fs-extra'
+import P from 'path'
 
 let browser
 let page
@@ -16,7 +18,7 @@ export default {
     page = await browser.newPage()
   },
   after: () => browser.close(),
-  css: () => withLocalTmpDir(async () => {
+  valid: () => withLocalTmpDir(async () => {
     await outputFiles({
       'nuxt.config.js': endent`
         export default {
@@ -38,13 +40,15 @@ export default {
         }
       `,
     })
-    await execa('nuxt', ['build'])
-    const childProcess = execa('nuxt', ['start'])
+    await execa.command('nuxt build')
+    const childProcess = execa.command('nuxt start')
     try {
       await portReady(3000)
       await page.goto('http://localhost:3000')
       const backgroundColor = await page.$eval('.foo', el => getComputedStyle(el).backgroundColor)
       expect(backgroundColor).toMatch('rgb(255, 0, 0)')
+      expect(await exists('.linaria-cache')).toBeFalsy()
+      expect(await exists(P.join('node_modules', '.cache', 'linaria', 'pages', 'index.linaria.css'))).toBeTruthy()
     } finally {
       await kill(childProcess.pid)
     }
@@ -71,8 +75,8 @@ export default {
         }
       `,
     })
-    await execa('nuxt', ['build'])
-    const childProcess = execa('nuxt', ['start'])
+    await execa.command('nuxt build')
+    const childProcess = execa.command('nuxt start')
     try {
       await portReady(3000)
       await page.goto('http://localhost:3000')
@@ -108,8 +112,8 @@ export default {
         }
       `,
     })
-    await execa('nuxt', ['build'])
-    const childProcess = execa('nuxt', ['start'])
+    await execa.command('nuxt build')
+    const childProcess = execa.command('nuxt start')
     try {
       await portReady(3000)
       await page.goto('http://localhost:3000')
