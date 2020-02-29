@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/dword-design/nuxt-linaria/compare/v1.0.3...v1.0.4) (2020-02-29)
+
+
+### Bug Fixes
+
+* move linaria cache directory into node_modules ([2c1e1e6](https://github.com/dword-design/nuxt-linaria/commit/2c1e1e6ab7ba5ace2af157f83420028b067ebc7d))
+
 ## [1.0.3](https://github.com/dword-design/nuxt-linaria/compare/v1.0.2...v1.0.3) (2020-02-28)
 
 
