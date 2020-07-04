@@ -1,11 +1,29 @@
-import { endent } from '@dword-design/functions'
+import { endent, mapValues } from '@dword-design/functions'
 import puppeteer from '@dword-design/puppeteer'
-import { outputFile } from 'fs-extra'
+import getPackageName from 'get-package-name'
 import { Builder, Nuxt } from 'nuxt'
+import outputFiles from 'output-files'
 import withLocalTmpDir from 'with-local-tmp-dir'
 
 let browser
 let page
+const runTest = config => () =>
+  withLocalTmpDir(async () => {
+    await outputFiles(config.files)
+    const nuxt = new Nuxt({
+      dev: false,
+      modules: ['~/../src'],
+      ...config.nuxtConfig,
+    })
+    await new Builder(nuxt).build()
+    await nuxt.listen()
+    try {
+      await page.goto('http://localhost:3000')
+      await config.test()
+    } finally {
+      await nuxt.close()
+    }
+  })
 
 export default {
   after: () => browser.close(),
@@ -13,34 +31,68 @@ export default {
     browser = await puppeteer.launch()
     page = await browser.newPage()
   },
-  css: () =>
-    withLocalTmpDir(async () => {
-      await outputFile(
-        'pages/index.js',
-        endent`
-        import { css } from 'linaria'
+  ...({
+    autoprefixer: {
+      files: {
+        'pages/index.vue': endent`
+          <script>
+          import { css } from 'linaria'
 
-        export default {
-          render: h => <div class={ ['foo', css\`background: red\`] }>Hello world</div>,
-        }
+          export default {
+            render: h => <div class={ css\`object-fit: cover\` }>Hello world</div>,
+          }
+          </script>
 
-      `
-      )
-      const nuxt = new Nuxt({
-        dev: false,
-        modules: ['~/../src'],
-      })
-      await new Builder(nuxt).build()
-      await nuxt.listen()
-      try {
-        await page.goto('http://localhost:3000')
+        `,
+      },
+      test: async () =>
+        expect(await page.content()).toMatch('-o-object-fit:cover'),
+    },
+    'postcss plugin': {
+      files: {
+        'pages/index.vue': endent`
+          <script>
+          import { css } from 'linaria'
+
+          export default {
+            render: h => <div class={ css\`background: rgba(#fff, .5)\` }>Hello world</div>,
+          }
+          </script>
+
+        `,
+      },
+      nuxtConfig: {
+        build: {
+          postcss: {
+            plugins: {
+              [getPackageName(require.resolve('postcss-hexrgba'))]: {},
+            },
+          },
+        },
+      },
+      test: async () =>
+        expect(await page.content()).toMatch('background:hsla(0,0%,100%,.5)'),
+    },
+    valid: {
+      files: {
+        'pages/index.vue': endent`
+          <script>
+          import { css } from 'linaria'
+
+          export default {
+            render: h => <div class={ ['foo', css\`background: red\`] }>Hello world</div>,
+          }
+          </script>
+
+        `,
+      },
+      test: async () => {
         const $foo = await page.waitForSelector('.foo')
         const backgroundColor = await $foo.evaluate(
           el => getComputedStyle(el).backgroundColor
         )
         expect(backgroundColor).toMatch('rgb(255, 0, 0)')
-      } finally {
-        await nuxt.close()
-      }
-    }),
+      },
+    },
+  } |> mapValues(runTest)),
 }
