@@ -1,9 +1,9 @@
 <!-- TITLE/ -->
-# nuxt-linaria
+# @dword-design/nuxt-linaria
 <!-- /TITLE -->
 
 <!-- BADGES/ -->
-[![NPM version](https://img.shields.io/npm/v/nuxt-linaria.svg)](https://npmjs.org/package/nuxt-linaria)
+[![NPM version](https://img.shields.io/npm/v/@dword-design/nuxt-linaria.svg)](https://npmjs.org/package/@dword-design/nuxt-linaria)
 ![Linux macOS Windows compatible](https://img.shields.io/badge/os-linux%20%7C%C2%A0macos%20%7C%C2%A0windows-blue)
 [![Build status](https://img.shields.io/github/workflow/status/dword-design/nuxt-linaria/build)](https://github.com/dword-design/nuxt-linaria/actions)
 [![Coverage status](https://img.shields.io/coveralls/dword-design/nuxt-linaria)](https://coveralls.io/github/dword-design/nuxt-linaria)
@@ -22,10 +22,10 @@
 
 ```bash
 # NPM
-$ npm install nuxt-linaria
+$ npm install @dword-design/nuxt-linaria
 
 # Yarn
-$ yarn add nuxt-linaria
+$ yarn add @dword-design/nuxt-linaria
 ```
 <!-- /INSTALL -->
 
