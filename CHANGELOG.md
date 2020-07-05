@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/dword-design/nuxt-linaria/compare/v1.0.6...v1.0.7) (2020-07-05)
+
+
+### Bug Fixes
+
+* **deps:** update dependency nuxt to ~2.13.0 ([148e49a](https://github.com/dword-design/nuxt-linaria/commit/148e49ad6c64ed56c89563fe7659332b438f0af0))
+
 ## [1.0.6](https://github.com/dword-design/nuxt-linaria/compare/v1.0.5...v1.0.6) (2020-07-05)
 
 
