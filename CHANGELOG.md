@@ -1,3 +1,23 @@
+# [2.0.0](https://github.com/dword-design/nuxt-linaria/compare/v1.0.9...v2.0.0) (2020-12-10)
+
+
+### Bug Fixes
+
+* remove core-js dependency ([5ecfb0c](https://github.com/dword-design/nuxt-linaria/commit/5ecfb0c4c040b1ddb2cbf908dab5c9461c0e7bbe))
+* upgrade base ([1ed4be0](https://github.com/dword-design/nuxt-linaria/commit/1ed4be07d478d5fadb0578f6a9900cffbd369c96))
+* upgrades ([a3cead2](https://github.com/dword-design/nuxt-linaria/commit/a3cead250d014bec502cfdb1181d4432c99a98be))
+* **deps:** update dependency linaria to v2 ([dc2d469](https://github.com/dword-design/nuxt-linaria/commit/dc2d4696c48a91ee97e495570fd31fbc0dadd0da))
+
+
+### Features
+
+* bump major version ([c00e503](https://github.com/dword-design/nuxt-linaria/commit/c00e50390091593ac771145a76dd410f87d130e4))
+
+
+### BREAKING CHANGES
+
+* upgrade linaria to v2
+
 ## [1.0.9](https://github.com/dword-design/nuxt-linaria/compare/v1.0.8...v1.0.9) (2020-12-02)
 
 
