@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/dword-design/nuxt-linaria/compare/v2.0.0...v2.0.1) (2020-12-11)
+
+
+### Bug Fixes
+
+* replace get-package-name with depcheck-package-name ([e9e1c4e](https://github.com/dword-design/nuxt-linaria/commit/e9e1c4e8ee922e177491b4d95dc8ffcca5b8e529))
+
 # [2.0.0](https://github.com/dword-design/nuxt-linaria/compare/v1.0.9...v2.0.0) (2020-12-10)
 
 
