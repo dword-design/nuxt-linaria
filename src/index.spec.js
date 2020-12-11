@@ -1,6 +1,6 @@
 import { endent, mapValues } from '@dword-design/functions'
 import puppeteer from '@dword-design/puppeteer'
-import getPackageName from 'get-package-name'
+import packageName from 'depcheck-package-name'
 import { Builder, Nuxt } from 'nuxt'
 import outputFiles from 'output-files'
 import withLocalTmpDir from 'with-local-tmp-dir'
@@ -65,7 +65,7 @@ export default {
         build: {
           postcss: {
             plugins: {
-              [getPackageName(require.resolve('postcss-hexrgba'))]: {},
+              [packageName`postcss-hexrgba`]: {},
             },
           },
         },

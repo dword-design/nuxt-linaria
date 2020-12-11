@@ -25,7 +25,7 @@
   "devDependencies": {
     "@dword-design/base": "^6.0.15",
     "@dword-design/puppeteer": "^1.0.1",
-    "get-package-name": "^1.1.0",
+    "depcheck-package-name": "^1.0.0",
     "nuxt": "^2.14.3",
     "output-files": "^1.1.15",
     "postcss-hexrgba": "^2.0.0",
