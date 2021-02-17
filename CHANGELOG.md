@@ -1,3 +1,10 @@
+## [2.0.4](https://github.com/dword-design/nuxt-linaria/compare/v2.0.3...v2.0.4) (2021-02-17)
+
+
+### Bug Fixes
+
+* update dependency @dword-design/puppeteer to v2 ([#12](https://github.com/dword-design/nuxt-linaria/issues/12)) ([653d69f](https://github.com/dword-design/nuxt-linaria/commit/653d69fd81a3b4614505eb96f61e27bc2bb1a578))
+
 ## [2.0.3](https://github.com/dword-design/nuxt-linaria/compare/v2.0.2...v2.0.3) (2021-02-17)
 
 
