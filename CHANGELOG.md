@@ -1,3 +1,10 @@
+## [2.0.3](https://github.com/dword-design/nuxt-linaria/compare/v2.0.2...v2.0.3) (2021-02-17)
+
+
+### Bug Fixes
+
+* reset nuxt version ([0047c96](https://github.com/dword-design/nuxt-linaria/commit/0047c96675891702e25872b38383f067ebaff4d1))
+
 ## [2.0.2](https://github.com/dword-design/nuxt-linaria/compare/v2.0.1...v2.0.2) (2021-02-17)
 
 
