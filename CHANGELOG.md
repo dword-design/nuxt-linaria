@@ -1,3 +1,11 @@
+## [2.0.2](https://github.com/dword-design/nuxt-linaria/compare/v2.0.1...v2.0.2) (2021-02-17)
+
+
+### Bug Fixes
+
+* fix tests ([cfeba1a](https://github.com/dword-design/nuxt-linaria/commit/cfeba1aedc2ee850f9d394051c1edda7cb22e182))
+* upgrades ([9faf20a](https://github.com/dword-design/nuxt-linaria/commit/9faf20aa8ddc3edf55927451b41fa5aa749c6b15))
+
 ## [2.0.1](https://github.com/dword-design/nuxt-linaria/compare/v2.0.0...v2.0.1) (2020-12-11)
 
 
