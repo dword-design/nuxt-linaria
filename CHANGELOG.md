@@ -1,3 +1,10 @@
+## [2.0.6](https://github.com/dword-design/nuxt-linaria/compare/v2.0.5...v2.0.6) (2021-03-09)
+
+
+### Bug Fixes
+
+* update dependency nuxt to ~2.15.0 ([e58d632](https://github.com/dword-design/nuxt-linaria/commit/e58d63264b703fb8175668e53c01102a050a6135))
+
 ## [2.0.5](https://github.com/dword-design/nuxt-linaria/compare/v2.0.4...v2.0.5) (2021-03-09)
 
 
