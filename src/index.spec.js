@@ -11,6 +11,7 @@ const runTest = config => () =>
   withLocalTmpDir(async () => {
     await outputFiles(config.files)
     const nuxt = new Nuxt({
+      createRequire: 'native',
       dev: false,
       modules: ['~/../src'],
       ...config.nuxtConfig,
