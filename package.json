@@ -3,6 +3,7 @@
   "version": "2.0.6",
   "description": "",
   "repository": "dword-design/nuxt-linaria",
+  "funding": "https://www.buymeacoffee.com/dword",
   "license": "MIT",
   "author": "Sebastian Landwehr <info@dword-design.de>",
   "main": "dist/index.js",
