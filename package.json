@@ -20,7 +20,7 @@
     "test": "base test"
   },
   "dependencies": {
-    "@dword-design/functions": "^1.1.5",
+    "@dword-design/functions": "^3.0.0",
     "linaria": "^2.0.0"
   },
   "devDependencies": {
