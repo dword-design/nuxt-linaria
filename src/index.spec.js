@@ -7,9 +7,11 @@ import withLocalTmpDir from 'with-local-tmp-dir'
 
 let browser
 let page
+
 const runTest = config => () =>
   withLocalTmpDir(async () => {
     await outputFiles(config.files)
+
     const nuxt = new Nuxt({
       createRequire: 'native',
       dev: false,
@@ -89,6 +91,7 @@ export default {
       },
       test: async () => {
         const $foo = await page.waitForSelector('.foo')
+
         const backgroundColor = await $foo.evaluate(
           el => getComputedStyle(el).backgroundColor
         )
