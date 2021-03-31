@@ -1,3 +1,10 @@
+## [2.0.10](https://github.com/dword-design/nuxt-linaria/compare/v2.0.9...v2.0.10) (2021-03-31)
+
+
+### Bug Fixes
+
+* lock file maintenance ([#20](https://github.com/dword-design/nuxt-linaria/issues/20)) ([588acef](https://github.com/dword-design/nuxt-linaria/commit/588acef26b161601a66885d3e60a3cd73ef7083c))
+
 ## [2.0.9](https://github.com/dword-design/nuxt-linaria/compare/v2.0.8...v2.0.9) (2021-03-23)
 
 
