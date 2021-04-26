@@ -1,3 +1,11 @@
+## [2.0.14](https://github.com/dword-design/nuxt-linaria/compare/v2.0.13...v2.0.14) (2021-04-26)
+
+
+### Bug Fixes
+
+* update dependency @dword-design/puppeteer to v4 ([#35](https://github.com/dword-design/nuxt-linaria/issues/35)) ([b79c497](https://github.com/dword-design/nuxt-linaria/commit/b79c497fa165d705b53c90ed85baa185208e966b))
+* update dependency with-local-tmp-dir to v3 ([#30](https://github.com/dword-design/nuxt-linaria/issues/30)) ([51a656a](https://github.com/dword-design/nuxt-linaria/commit/51a656a8bf7dc53a7ba3fbe2fefe9e26492f6096))
+
 ## [2.0.13](https://github.com/dword-design/nuxt-linaria/compare/v2.0.12...v2.0.13) (2021-04-22)
 
 
