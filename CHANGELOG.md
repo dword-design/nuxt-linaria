@@ -1,3 +1,10 @@
+## [2.0.15](https://github.com/dword-design/nuxt-linaria/compare/v2.0.14...v2.0.15) (2021-04-28)
+
+
+### Bug Fixes
+
+* updated package.json[description] ([#33](https://github.com/dword-design/nuxt-linaria/issues/33)) ([db32553](https://github.com/dword-design/nuxt-linaria/commit/db32553a750186120a0b085ace872e521e5a3868))
+
 ## [2.0.14](https://github.com/dword-design/nuxt-linaria/compare/v2.0.13...v2.0.14) (2021-04-26)
 
 
