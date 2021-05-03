@@ -1,3 +1,19 @@
+# [3.0.0](https://github.com/dword-design/nuxt-linaria/compare/v2.0.15...v3.0.0) (2021-05-03)
+
+
+### Bug Fixes
+
+* update dependency @dword-design/base to v8 ([#37](https://github.com/dword-design/nuxt-linaria/issues/37)) ([c9f5494](https://github.com/dword-design/nuxt-linaria/commit/c9f5494ddd854a45353f5aca229b1fa8f359df63))
+
+
+### BREAKING CHANGES
+
+* require Node.js >= 12
+
+Co-authored-by: Renovate Bot <bot@renovateapp.com>
+Co-authored-by: Sebastian Landwehr <info@dword-design.de>
+Co-authored-by: GitHub Actions <actions@github.com>
+
 ## [2.0.15](https://github.com/dword-design/nuxt-linaria/compare/v2.0.14...v2.0.15) (2021-04-28)
 
 
