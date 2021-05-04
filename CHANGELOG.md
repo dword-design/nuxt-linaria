@@ -1,3 +1,11 @@
+## [3.0.1](https://github.com/dword-design/nuxt-linaria/compare/v3.0.0...v3.0.1) (2021-05-04)
+
+
+### Bug Fixes
+
+* update dependency @dword-design/functions to v4 ([#38](https://github.com/dword-design/nuxt-linaria/issues/38)) ([9b5b498](https://github.com/dword-design/nuxt-linaria/commit/9b5b498638244e4dbb38d18502f2afeccb1217d5))
+* update dependency depcheck-package-name to v2 ([#39](https://github.com/dword-design/nuxt-linaria/issues/39)) ([41a3c0a](https://github.com/dword-design/nuxt-linaria/commit/41a3c0a34e661c40a65739bc2cb4df73f697203d))
+
 # [3.0.0](https://github.com/dword-design/nuxt-linaria/compare/v2.0.15...v3.0.0) (2021-05-03)
 
 
