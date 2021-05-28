@@ -1,3 +1,10 @@
+## [3.0.3](https://github.com/dword-design/nuxt-linaria/compare/v3.0.2...v3.0.3) (2021-05-28)
+
+
+### Bug Fixes
+
+* update config files ([ac7fc03](https://github.com/dword-design/nuxt-linaria/commit/ac7fc03ef18af0dddf42b8af6915e21758d960f9))
+
 ## [3.0.2](https://github.com/dword-design/nuxt-linaria/compare/v3.0.1...v3.0.2) (2021-05-04)
 
 
