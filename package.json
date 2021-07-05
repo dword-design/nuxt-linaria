@@ -2,7 +2,7 @@
   "name": "@dword-design/nuxt-linaria",
   "version": "3.0.4",
   "repository": "dword-design/nuxt-linaria",
-  "funding": "https://www.buymeacoffee.com/dword",
+  "funding": "https://github.com/sponsors/dword-design",
   "license": "MIT",
   "author": "Sebastian Landwehr <info@sebastianlandwehr.com>",
   "main": "dist/index.js",
