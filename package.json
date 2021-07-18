@@ -1,6 +1,16 @@
 {
   "name": "nuxt-linaria",
   "version": "3.0.5",
+  "description": "Module to integrate Linaria with Nuxt.",
+  "keywords": [
+    "vuejs",
+    "vue",
+    "css-framework",
+    "css-in-js",
+    "cssinjs",
+    "nuxt-module",
+    "linaria"
+  ],
   "repository": "dword-design/nuxt-linaria",
   "funding": "https://github.com/sponsors/dword-design",
   "license": "MIT",
@@ -36,15 +46,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "description": "Module to integrate Linaria with Nuxt.",
-  "keywords": [
-    "vuejs",
-    "vue",
-    "css-framework",
-    "css-in-js",
-    "cssinjs",
-    "nuxt-module",
-    "linaria"
-  ]
+  }
 }

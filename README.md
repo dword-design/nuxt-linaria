@@ -50,7 +50,7 @@
 <!-- /BADGES -->
 
 <!-- DESCRIPTION/ -->
-
+Module to integrate Linaria with Nuxt.
 <!-- /DESCRIPTION -->
 
 This is an attempt to make the wonderful [Linaria](https://github.com/callstack/linaria) CSS-in-JS framework available to Nuxt. It is possible to use it in JSX and you can also pass a generated class to a template, but you cannot directly use the `css` literal in templates because the linaria loader only parses JavaScript.
