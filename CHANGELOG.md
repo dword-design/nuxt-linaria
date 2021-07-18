@@ -5,6 +5,16 @@
 
 * open source it ([865da60](https://github.com/dword-design/nuxt-linaria/commit/865da60b5415456c9cbe43816cffaa6e7d5b4a00))
 * prepare ([54ddb8d](https://github.com/dword-design/nuxt-linaria/commit/54ddb8dd8ae6c946272144929fe700e646472b23))
+* trigger release ([7a9ca1c](https://github.com/dword-design/nuxt-linaria/commit/7a9ca1c3148edf646ead75618c9e94f835d14600))
+* write GitHub metadata to package.json [description, keywords] ([8d47df5](https://github.com/dword-design/nuxt-linaria/commit/8d47df53c9360952e7abeba82558ae0fa01e2a82))
+
+## [3.0.6](https://github.com/dword-design/nuxt-linaria/compare/v3.0.5...v3.0.6) (2021-07-18)
+
+
+### Bug Fixes
+
+* open source it ([865da60](https://github.com/dword-design/nuxt-linaria/commit/865da60b5415456c9cbe43816cffaa6e7d5b4a00))
+* prepare ([54ddb8d](https://github.com/dword-design/nuxt-linaria/commit/54ddb8dd8ae6c946272144929fe700e646472b23))
 * write GitHub metadata to package.json [description, keywords] ([8d47df5](https://github.com/dword-design/nuxt-linaria/commit/8d47df53c9360952e7abeba82558ae0fa01e2a82))
 
 ## [3.0.5](https://github.com/dword-design/nuxt-linaria/compare/v3.0.4...v3.0.5) (2021-07-06)
