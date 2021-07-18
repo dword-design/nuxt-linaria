@@ -1,12 +1,12 @@
 <!-- TITLE/ -->
-# @dword-design/nuxt-linaria
+# nuxt-linaria
 <!-- /TITLE -->
 
 <!-- BADGES/ -->
   <p>
-    <a href="https://npmjs.org/package/@dword-design/nuxt-linaria">
+    <a href="https://npmjs.org/package/nuxt-linaria">
       <img
-        src="https://img.shields.io/npm/v/@dword-design/nuxt-linaria.svg"
+        src="https://img.shields.io/npm/v/nuxt-linaria.svg"
         alt="npm version"
       >
     </a><img src="https://img.shields.io/badge/os-linux%20%7C%C2%A0macos%20%7C%C2%A0windows-blue" alt="Linux macOS Windows compatible"><a href="https://github.com/dword-design/nuxt-linaria/actions">
@@ -53,17 +53,67 @@
 
 <!-- /DESCRIPTION -->
 
+This is an attempt to make the wonderful [Linaria](https://github.com/callstack/linaria) CSS-in-JS framework available to Nuxt. It is possible to use it in JSX and you can also pass a generated class to a template, but you cannot directly use the `css` literal in templates because the linaria loader only parses JavaScript.
+
 <!-- INSTALL/ -->
 ## Install
 
 ```bash
 # npm
-$ npm install @dword-design/nuxt-linaria
+$ npm install nuxt-linaria
 
 # Yarn
-$ yarn add @dword-design/nuxt-linaria
+$ yarn add nuxt-linaria
 ```
 <!-- /INSTALL -->
+
+## Usage
+
+Add the module to your Nuxt config:
+
+```js
+// nuxt.config.js
+
+export default {
+  modules: [
+    'nuxt-linaria',
+  ],
+}
+```
+
+Usage with JSX:
+
+```js
+<script>
+import { css } from 'linaria'
+
+export default {
+  render: h => <div class={css`background: red`}>Hello world</div>,
+}
+</script>
+```
+
+Usage within a template:
+
+```html
+<template>
+  <div :class="style">Hello world</div>
+</template>
+```
+
+```js
+<script>
+import { css } from 'linaria'
+
+export default {
+  computed: {
+    style: () => css\`background: red\`,
+  },
+}
+</script>
+```
+
+You might also want to have a look at [styled-vue](https://github.com/egoist/styled-vue), which is built for Vue.
 
 <!-- LICENSE/ -->
 ## Contribute
@@ -99,6 +149,14 @@ Hey, I am Sebastian Landwehr, a freelance web developer, and I love developing w
 </p>
 
 Thanks a lot for your support! ❤️
+
+## See Also
+
+* [nuxt-mail](https://github.com/dword-design/nuxt-mail): Adds email sending capability to a Nuxt.js app. Adds a server route, an injected variable, and uses nodemailer to send emails.
+* [nuxt-route-meta](https://github.com/dword-design/nuxt-route-meta): Adds Nuxt page data to route meta at build time.
+* [nuxt-modernizr](https://github.com/dword-design/nuxt-modernizr): Adds a Modernizr build to your Nuxt.js app.
+* [nuxt-mermaid-string](https://github.com/dword-design/nuxt-mermaid-string): Embed a Mermaid diagram in a Nuxt.js app by providing its diagram string.
+* [nuxt-content-git](https://github.com/dword-design/nuxt-content-git): Adds a property to each @nuxt/content document containing the raw HTML body, rendered from markdown.
 
 ## License
 

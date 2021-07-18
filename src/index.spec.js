@@ -76,6 +76,34 @@ export default {
       test: async () =>
         expect(await page.content()).toMatch('background:hsla(0,0%,100%,.5)'),
     },
+    template: {
+      files: {
+        'pages/index.vue': endent`
+          <template>
+            <div :class="['foo', style]">Hello world</div>
+          </template>
+
+          <script>
+          import { css } from 'linaria'
+
+          export default {
+            computed: {
+              style: () => css\`background: red\`,
+            },
+          }
+          </script>
+
+        `,
+      },
+      test: async () => {
+        const $foo = await page.waitForSelector('.foo')
+
+        const backgroundColor = await $foo.evaluate(
+          el => getComputedStyle(el).backgroundColor
+        )
+        expect(backgroundColor).toMatch('rgb(255, 0, 0)')
+      },
+    },
     valid: {
       files: {
         'pages/index.vue': endent`
