@@ -36,5 +36,15 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "description": "Module to integrate Linaria with Nuxt.",
+  "keywords": [
+    "vuejs",
+    "vue",
+    "css-framework",
+    "css-in-js",
+    "cssinjs",
+    "nuxt-module",
+    "linaria"
+  ]
 }
