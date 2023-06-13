@@ -1,42 +1,24 @@
-import { endent, mapValues } from '@dword-design/functions'
-import puppeteer from '@dword-design/puppeteer'
+import { endent } from '@dword-design/functions'
+import tester from '@dword-design/tester'
+import testerPluginPuppeteer from '@dword-design/tester-plugin-puppeteer'
+import testerPluginTmpDir from '@dword-design/tester-plugin-tmp-dir'
 import packageName from 'depcheck-package-name'
-import { Builder, Nuxt } from 'nuxt'
+import { execaCommand } from 'execa'
+import nuxtDevReady from 'nuxt-dev-ready'
 import outputFiles from 'output-files'
-import withLocalTmpDir from 'with-local-tmp-dir'
+import kill from 'tree-kill-promise'
 
-let browser
-let page
+export default tester(
+  {
+    async autoprefixer() {
+      await outputFiles({
+        'nuxt.config.js': endent`
+          import self from '../src/index.js'
 
-const runTest = config => () =>
-  withLocalTmpDir(async () => {
-    await outputFiles(config.files)
-
-    const nuxt = new Nuxt({
-      createRequire: 'native',
-      dev: false,
-      modules: ['~/../src'],
-      ...config.nuxtConfig,
-    })
-    await new Builder(nuxt).build()
-    await nuxt.listen()
-    try {
-      await page.goto('http://localhost:3000')
-      await config.test()
-    } finally {
-      await nuxt.close()
-    }
-  })
-
-export default {
-  after: () => browser.close(),
-  before: async () => {
-    browser = await puppeteer.launch()
-    page = await browser.newPage()
-  },
-  ...({
-    autoprefixer: {
-      files: {
+          export default {
+            modules: [self],
+          }
+        `,
         'pages/index.vue': endent`
           <script>
           import { css } from 'linaria'
@@ -45,14 +27,34 @@ export default {
             render: h => <div class={ css\`object-fit: cover\` }>Hello world</div>,
           }
           </script>
-
         `,
-      },
-      test: async () =>
-        expect(await page.content()).toMatch('-o-object-fit:cover'),
+      })
+
+      const nuxt = execaCommand('nuxt dev')
+      try {
+        await nuxtDevReady()
+        await this.page.goto('http://localhost:3000')
+        expect(await this.page.content()).toMatch('-o-object-fit:cover')
+      } finally {
+        await kill(nuxt.pid)
+      }
     },
-    'postcss plugin': {
-      files: {
+    async 'postcss plugin'() {
+      await outputFiles({
+        'nuxt.config.js': endent`
+          import self from '../src/index.js'
+
+          export default {
+            build: {
+              postcss: {
+                plugins: {
+                  ['${packageName`postcss-hexrgba`}']: {},
+                },
+              },
+            },
+            modules: [self],
+          }
+        `,
         'pages/index.vue': endent`
           <script>
           import { css } from 'linaria'
@@ -63,21 +65,28 @@ export default {
           </script>
 
         `,
-      },
-      nuxtConfig: {
-        build: {
-          postcss: {
-            plugins: {
-              [packageName`postcss-hexrgba`]: {},
-            },
-          },
-        },
-      },
-      test: async () =>
-        expect(await page.content()).toMatch('background:hsla(0,0%,100%,.5)'),
+      })
+
+      const nuxt = execaCommand('nuxt dev')
+      try {
+        await nuxtDevReady()
+        await this.page.goto('http://localhost:3000')
+        expect(await this.page.content()).toMatch(
+          'background:rgba(255,255,255,.5)',
+        )
+      } finally {
+        await kill(nuxt.pid)
+      }
     },
-    template: {
-      files: {
+    async template() {
+      await outputFiles({
+        'nuxt.config.js': endent`
+          import self from '../src/index.js'
+
+          export default {
+            modules: [self],
+          }
+        `,
         'pages/index.vue': endent`
           <template>
             <div :class="['foo', style]">Hello world</div>
@@ -92,20 +101,33 @@ export default {
             },
           }
           </script>
-
         `,
-      },
-      test: async () => {
-        const $foo = await page.waitForSelector('.foo')
+      })
+
+      const nuxt = execaCommand('nuxt dev')
+      try {
+        await nuxtDevReady()
+        await this.page.goto('http://localhost:3000')
+
+        const $foo = await this.page.waitForSelector('.foo')
 
         const backgroundColor = await $foo.evaluate(
           el => getComputedStyle(el).backgroundColor,
         )
         expect(backgroundColor).toMatch('rgb(255, 0, 0)')
-      },
+      } finally {
+        await kill(nuxt.pid)
+      }
     },
-    valid: {
-      files: {
+    async valid() {
+      await outputFiles({
+        'nuxt.config.js': endent`
+          import self from '../src/index.js'
+
+          export default {
+            modules: [self],
+          }
+        `,
         'pages/index.vue': endent`
           <script>
           import { css } from 'linaria'
@@ -114,17 +136,24 @@ export default {
             render: h => <div class={ ['foo', css\`background: red\`] }>Hello world</div>,
           }
           </script>
-
         `,
-      },
-      test: async () => {
-        const $foo = await page.waitForSelector('.foo')
+      })
+
+      const nuxt = execaCommand('nuxt dev')
+      try {
+        await nuxtDevReady()
+        await this.page.goto('http://localhost:3000')
+
+        const $foo = await this.page.waitForSelector('.foo')
 
         const backgroundColor = await $foo.evaluate(
           el => getComputedStyle(el).backgroundColor,
         )
         expect(backgroundColor).toMatch('rgb(255, 0, 0)')
-      },
+      } finally {
+        await kill(nuxt.pid)
+      }
     },
-  } |> mapValues(runTest)),
-}
+  },
+  [testerPluginTmpDir(), testerPluginPuppeteer()],
+)
