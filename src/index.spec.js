@@ -99,7 +99,7 @@ export default {
         const $foo = await page.waitForSelector('.foo')
 
         const backgroundColor = await $foo.evaluate(
-          el => getComputedStyle(el).backgroundColor
+          el => getComputedStyle(el).backgroundColor,
         )
         expect(backgroundColor).toMatch('rgb(255, 0, 0)')
       },
@@ -121,7 +121,7 @@ export default {
         const $foo = await page.waitForSelector('.foo')
 
         const backgroundColor = await $foo.evaluate(
-          el => getComputedStyle(el).backgroundColor
+          el => getComputedStyle(el).backgroundColor,
         )
         expect(backgroundColor).toMatch('rgb(255, 0, 0)')
       },
