@@ -1,6 +1,6 @@
 {
   "name": "nuxt-linaria",
-  "version": "3.0.7",
+  "version": "4.0.0",
   "description": "Module to integrate Linaria with Nuxt.",
   "keywords": [
     "vuejs",

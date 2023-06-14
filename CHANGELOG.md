@@ -1,3 +1,15 @@
+# [4.0.0](https://github.com/dword-design/nuxt-linaria/compare/v3.0.7...v4.0.0) (2023-06-14)
+
+
+### Bug Fixes
+
+* lock file maintenance ([#84](https://github.com/dword-design/nuxt-linaria/issues/84)) ([dcf0bf2](https://github.com/dword-design/nuxt-linaria/commit/dcf0bf23629e9c549efdfa4adcafb9081ac2382c))
+
+
+### BREAKING CHANGES
+
+* drop node 12 and 14
+
 ## [3.0.7](https://github.com/dword-design/nuxt-linaria/compare/v3.0.6...v3.0.7) (2021-07-20)
 
 
