@@ -32,7 +32,7 @@
     "test": "base test"
   },
   "dependencies": {
-    "linaria": "^2.0.0"
+    "linaria": "^5.0.0"
   },
   "devDependencies": {
     "@dword-design/base": "^10.0.8",
