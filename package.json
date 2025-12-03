@@ -43,7 +43,7 @@
     "@dword-design/tester-plugin-tmp-dir": "^2.1.26",
     "depcheck-package-name": "^3.0.0",
     "execa": "^7.1.1",
-    "nuxt": "^2",
+    "nuxt": "^3.0.0",
     "nuxt-dev-ready": "^2.0.1",
     "output-files": "^2.0.28",
     "postcss-hexrgba": "^2.0.0",
